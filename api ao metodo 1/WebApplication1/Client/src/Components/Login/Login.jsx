@@ -1,38 +1,38 @@
 
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+//import api from "../../../../../Client/api";
+
 
 const Login = () => {
   //Armazenar entradas do usuário
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //Função é chamada quando o formulário é enviado
-  const handleSubmit = (event) => {
-    //Impede que a página seja recarregada
-    event.preventDefault();
-    fetch('COLOCAR HTTPS NA URL/dominio', { 
-      method: 'POST', //Enviar dados
-      headers: {
-        'Content-Type': 'application/json',
-    },
-      body: JSON.stringify({ email: 'email', password: 'password' }),
-    })
-    
-    .then((response) => {
-      if (response.ok) {
-        console.log('Login bem-sucedido');
-        //FAZER Redirecionamento pagina Principal
-      } else {
-        console.error('Erro no login');
-      }
-    })
-  }
+  const navigate = useNavigate();
 
+  async function login(e){
+    e.preventDefault();
+
+    const data = {
+      email, password
+    };
+
+   /* try{
+      const response = await api.post('', data);
+      localStorage.setItem('email', email);
+      localStorage.setItem('accesToken', response.data.accessToken);
+      
+    }catch(error){
+      alert('Erro no login. Tente novamente');
+    } 
+      */
+  }
+ 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form>
        <h1>Login</h1>
         <div className="input">
           <input
@@ -58,6 +58,7 @@ const Login = () => {
         </div>
         <div>
           <button type="submit">Login</button>
+          <Link to="/principal">Login</Link>        
         </div>
         <div className="signup-link">
           <p>
