@@ -1,0 +1,43 @@
+.container-cadastro-produto h1 {
+    position: fixed;
+    top: 1%;
+    left: 25%;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+.input-cadastro-produto{ 
+    margin-top: 20px;
+}
+.input-cadastro-produto input{
+    padding: 10px 60px; 
+    font-size: 20px; 
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border: none; 
+    border-radius: 20px; 
+}
+
+.input-cadastro-produto input::placeholder {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.button-cadastrar {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 0px;
+    margin-top: 50px;
+    
+}
+.button-cadastrar button{
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+}
