@@ -7,17 +7,17 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   //Armazenar entradas do usuário
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  //const [email, setEmail] = useState("");
+  //const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  async function login(e){
-    e.preventDefault();
+ // async function login(e){
+   // e.preventDefault();
 
-    const data = {
-      email, password
-    };
+   // const data = {
+   //   email, password
+   // };
 
    /* try{
       const response = await api.post('', data);
@@ -28,8 +28,10 @@ const Login = () => {
       alert('Erro no login. Tente novamente');
     } 
       */
-  }
- 
+  //}
+  //Codigo abaixo apenas para test
+  const  goToOtherPage = (path) => {navigate(path)};
+
   return (
     <div className="container">
       <form>
@@ -57,8 +59,7 @@ const Login = () => {
           </label>
         </div>
         <div>
-          <button type="submit">Login</button>
-          <Link to="/principal">Login</Link>        
+          <button onClick={goToOtherPage("/menuprincipal")}>Login</button>       
         </div>
         <div className="signup-link">
           <p>
