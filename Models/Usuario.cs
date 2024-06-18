@@ -18,6 +18,6 @@ public class Usuario
     [StringLength(100)]
     public string Email { get; set; }
     [Required]
-    public int Senha { get; set; }
+    public string Senha { get; set; }
 }
 }
