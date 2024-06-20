@@ -32,8 +32,11 @@ const Login = () => {
 
   return (
     <div className="container">
+
       <form onSubmit={handleSubmit}>
+
        <h1>Login</h1>
+
         <div className="input">
           <input
             type="email"
@@ -41,6 +44,7 @@ const Login = () => {
             required
           />
         </div>
+
         <div className="input">
           <input
             type="password"
@@ -48,6 +52,7 @@ const Login = () => {
             required
           />
         </div>
+
         <div className="recall">
           <label>
             <input 
@@ -56,14 +61,17 @@ const Login = () => {
             Lembre de min
           </label>
         </div>
+
         <div>
           <button type="submit">Login</button>
         </div>
+
         <div className="signup-link">
           <p>
-            Não possue uma conta? <Link to="/RegistrarUsuario">Registrar</Link>
+            Não possue uma conta? <Link to="/registrar/usuario/:usuarioid">Registrar</Link>
           </p>
         </div>
+
       </form>
     </div>
   );
