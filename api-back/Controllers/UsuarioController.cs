@@ -74,7 +74,7 @@ namespace Usuario_itens.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost("RegistroDeUsuario")]
         public async Task<ActionResult> Create(Usuario usuario)
         {
             try
