@@ -1,0 +1,73 @@
+.container {
+  width: 450px;
+  border: 2px solid royalblue;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 30px;
+}
+.container .input{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20% auto;
+}
+.input input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 3px solid white;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 20px 45px 20px 25px;
+}
+.input input::placeholder {
+  color: white;
+}
+.container .recall {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.recall label input {
+  accent-color: #fff;
+  margin-right: 4px;
+}
+
+.recall a{
+  color: white;
+  margin-right: 4px;
+}
+
+.container button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: nome;
+  border-radius: 40px;
+  box-shadow: 0 0 10px slategray;
+  cursor: pointer;
+  font-size:  16px;
+  color: black;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.container .signup-link {
+  font-size: 15px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.signup-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight:  600;
+}
