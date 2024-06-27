@@ -75,3 +75,7 @@ C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\runtimes\w
 C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\obj\Debug\net7.0\Usuario_itens.sourcelink.json
+C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\stylecop.json
+C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\stylecop1.json
+C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\PC\source\repos\Usuario_itens\Usuario_itens\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
