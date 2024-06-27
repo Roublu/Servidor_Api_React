@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using Usuario_itens.Models;
@@ -8,20 +10,21 @@ namespace Usuario_itens.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     //[Produces("application/json")]
     public class UsuarioController : ControllerBase
     {
-        private IUsuarioService _usuarioService;
+        private readonly UsuarioService _usuarioService;
 
-        public UsuarioController(IUsuarioService usuarioService)
+        public UsuarioController(UsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<IAsyncEnumerable<Usuario>>> GetUsuarios()
         {
             try
@@ -74,7 +77,7 @@ namespace Usuario_itens.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost("RegistroDeUsuario")]
         public async Task<ActionResult> Create(Usuario usuario)
         {
             try
