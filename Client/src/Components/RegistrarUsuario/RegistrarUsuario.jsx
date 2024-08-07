@@ -5,7 +5,7 @@ const RegistrarUsuario = () => {
 
 return ( 
   <div className="container-Registrar">
-    <form> {/* Define handleSubmit para tratar o envio do formulário */}
+    <form> {}
      <h1>Registro de Conta</h1>
     <div className="input">
       <input
