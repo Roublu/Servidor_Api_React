@@ -2,38 +2,39 @@
 import { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
+import api from './../../services/api';
 
 const Login = () => {
   //Armazenar entradas do usuário
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //Função é chamada quando o formulário é enviado
-  const handleSubmit = (event) => {
-    //Impede que a página seja recarregada
-    event.preventDefault();
-    fetch('COLOCAR HTTPS NA URL/dominio', { 
-      method: 'POST', //Enviar dados
-      headers: {
-        'Content-Type': 'application/json',
-    },
-      body: JSON.stringify({ email: 'email', password: 'password' }),
-    })
-    
-    .then((response) => {
-      if (response.ok) {
-        console.log('Login bem-sucedido');
-        //FAZER Redirecionamento pagina Principal
-      } else {
-        console.error('Erro no login');
-      }
-    })
-  }
+  //Hisotrico de navegação
+  const history = useNavigate();
 
+  async function login(event) {
+   event.preventDefault();
+    const data = {
+      email, password
+   };
+
+   try{
+     const response = await api.post('/api/Usuario', data)
+     localStorage.setItem('email', email)
+     localStorage.setItem('token', response.data.token);
+     localStorage.setItem('expiration', response.data.token);
+     history('/menu/principal');
+
+   }catch(error) {
+      alert('O login  falhou ' + error)
+   }
+  }
+ 
   return (
     <div className="container">
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={login}>
 
        <h1>Login</h1>
 
@@ -41,6 +42,8 @@ const Login = () => {
           <input
             type="email"
             placeholder="E-mail"
+            value={email}
+            onChange={ e => setEmail(e.target.value)}
             required
           />
         </div>
@@ -49,6 +52,8 @@ const Login = () => {
           <input
             type="password"
             placeholder="Senha"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
             required
           />
         </div>
@@ -63,12 +68,12 @@ const Login = () => {
         </div>
 
         <div>
-          <button type="submit">Login</button>
+          <button  type="submit">Login</button>
         </div>
 
         <div className="signup-link">
           <p>
-            Não possue uma conta? <Link to="/registrar/usuario/:usuarioid">Registrar</Link>
+            Não possui uma conta? <Link to="/registrar/usuario">Registrar</Link>
           </p>
         </div>
 
