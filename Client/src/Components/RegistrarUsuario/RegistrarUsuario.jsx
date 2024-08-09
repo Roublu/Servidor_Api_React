@@ -3,7 +3,12 @@ import "./RegistrarUsuario.css"
 
 const RegistrarUsuario = () => {
 
-return ( 
+  const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  return ( 
   <div className="container-Registrar">
     <form> {}
      <h1>Registro de Conta</h1>
@@ -11,6 +16,8 @@ return (
       <input
         type="text" 
         name="nome" 
+        value={nome}
+        onChange={e => setNome(e.target.value) }
         required
         placeholder="Digite nome"
       />
@@ -20,6 +27,8 @@ return (
       <input
         type="text" 
         name="sobrenome" 
+        value={sobrenome}
+        onChange={e => setSobrenome(e.target.value) }
         required
         placeholder="Digite sobrenome"
       />
@@ -29,6 +38,8 @@ return (
         <input
         type="email" 
         name="email" 
+        value={email}
+        onChange={e => setEmail(e.target.value) }
         required
         placeholder="Digite o email"
         />
@@ -37,6 +48,8 @@ return (
       <input
         type="password" 
         name="senha" 
+        value={password}
+        onChange={e => setPassword(e.target.value) }
         required
         placeholder="Digite uma senha"
       />
